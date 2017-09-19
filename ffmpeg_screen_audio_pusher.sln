@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ffmpeg_screen_audio_pusher", "ffmpeg_screen_audio_pusher\ffmpeg_screen_audio_pusher.vcxproj", "{1E3D6C2D-26FF-441B-8A7F-599289B120F5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{28716CA9-F23C-4A79-952F-C52EF215CE0D} = {28716CA9-F23C-4A79-952F-C52EF215CE0D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RtmpStreamPusher", "RtmpStreamPusher\RtmpStreamPusher.vcxproj", "{A0CDF01C-6E37-4E1B-861E-16965A8A7569}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1E3D6C2D-26FF-441B-8A7F-599289B120F5} = {1E3D6C2D-26FF-441B-8A7F-599289B120F5}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "publiclib", "publiclib\publiclib.vcxproj", "{28716CA9-F23C-4A79-952F-C52EF215CE0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E3D6C2D-26FF-441B-8A7F-599289B120F5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1E3D6C2D-26FF-441B-8A7F-599289B120F5}.Debug|Win32.Build.0 = Debug|Win32
+		{1E3D6C2D-26FF-441B-8A7F-599289B120F5}.Release|Win32.ActiveCfg = Release|Win32
+		{1E3D6C2D-26FF-441B-8A7F-599289B120F5}.Release|Win32.Build.0 = Release|Win32
+		{A0CDF01C-6E37-4E1B-861E-16965A8A7569}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A0CDF01C-6E37-4E1B-861E-16965A8A7569}.Debug|Win32.Build.0 = Debug|Win32
+		{A0CDF01C-6E37-4E1B-861E-16965A8A7569}.Release|Win32.ActiveCfg = Release|Win32
+		{A0CDF01C-6E37-4E1B-861E-16965A8A7569}.Release|Win32.Build.0 = Release|Win32
+		{28716CA9-F23C-4A79-952F-C52EF215CE0D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{28716CA9-F23C-4A79-952F-C52EF215CE0D}.Debug|Win32.Build.0 = Debug|Win32
+		{28716CA9-F23C-4A79-952F-C52EF215CE0D}.Release|Win32.ActiveCfg = Release|Win32
+		{28716CA9-F23C-4A79-952F-C52EF215CE0D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
