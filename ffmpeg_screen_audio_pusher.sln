@@ -11,6 +11,7 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RtmpStreamPusher", "RtmpStreamPusher\RtmpStreamPusher.vcxproj", "{A0CDF01C-6E37-4E1B-861E-16965A8A7569}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1E3D6C2D-26FF-441B-8A7F-599289B120F5} = {1E3D6C2D-26FF-441B-8A7F-599289B120F5}
+		{28716CA9-F23C-4A79-952F-C52EF215CE0D} = {28716CA9-F23C-4A79-952F-C52EF215CE0D}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "publiclib", "publiclib\publiclib.vcxproj", "{28716CA9-F23C-4A79-952F-C52EF215CE0D}"

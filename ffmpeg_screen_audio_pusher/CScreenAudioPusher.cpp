@@ -45,11 +45,15 @@ RECORDAPI int MR_SetRecordInfo(void* pObject, const RECORD_INFO& recordInfo)
 RECORDAPI int MR_StartRecord(void* pObject)
 {
 	IScreenAudioClass* pRecorder = (IScreenAudioClass*)pObject;
+	int nRet = -1;
 	if (pRecorder)
 	{
-		return pRecorder->StartRecord();
+		nRet = pRecorder->StartRecord();
+		if (nRet != 0){
+			pRecorder->StopRecord();
+		}
 	}
-	return -1;
+	return nRet;
 }
 
 

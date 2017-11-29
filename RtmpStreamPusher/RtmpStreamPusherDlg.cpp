@@ -104,10 +104,11 @@ BOOL CRtmpStreamPusherDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO:  在此添加额外的初始化代码
+	m_editFrameRate.SetWindowTextW(_T("25"));
+	m_editUrl.SetWindowTextW(_T("rtmp://video-center.alivecdn1.com/55667788/LiveStream?vhost=rtmp01.talk915.com"));
+
 	m_pPusher = MR_CreateScreenAudioRecorder();
 
-	m_editFrameRate.SetWindowTextW(_T("25"));
-	m_editUrl.SetWindowTextW(_T("rtmp://106.75.138.12:1936/5544332211/5544332211"));
 
 	m_mapDeviceInfo = MR_GetDevice(m_pPusher);
 

@@ -6,8 +6,8 @@
 #include "afxwin.h"
 #include "../publiclib/publicfun.h"
 #include "../ffmpeg_screen_audio_pusher/IScreenAudioPusher.h"
-#pragma comment(lib, "../Release/publiclib.lib")
-#pragma comment(lib, "../Release/ffmpeg_screen_audio_pusher.lib")
+#pragma comment(lib, "../Debug/publiclib.lib")
+#pragma comment(lib, "../Debug/ffmpeg_screen_audio_pusher.lib")
 
 
 // CRtmpStreamPusherDlg ¶Ô»°¿ò

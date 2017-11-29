@@ -62,8 +62,7 @@ namespace MediaRtmpPusher
 	void CScreenAudioRecord::InitData()
 	{
 		m_pStreamInfo = (struct_stream_info *)calloc(1, sizeof(struct_stream_info));
-		if (NULL == m_pStreamInfo)
-		{
+		if (NULL == m_pStreamInfo){
 			return;
 		}
 
@@ -215,8 +214,7 @@ namespace MediaRtmpPusher
 	{
 		if (m_recordInfo.rtmp_url == "" || m_recordInfo.video_dst_height == 0
 			|| m_recordInfo.video_dst_width == 0 || m_recordInfo.video_frame_rate == 0
-			|| m_recordInfo.video_device_name == "" || m_recordInfo.audio_device_name == ""
-			|| m_recordInfo.preview_hwnd == NULL){
+			|| m_recordInfo.video_device_name == "" || m_recordInfo.audio_device_name == ""){
 			Write_Log(LOG_ERROR, "CheckRecordInfo : Paramer error!");
 			return -1;
 		}
@@ -236,6 +234,7 @@ namespace MediaRtmpPusher
 
 		if (CreateVideoWindow() < 0){
 			Write_Log(LOG_ERROR, "StartRecord : CreateVideoWindow error!");
+			StopRecord();
 			return -1;
 		}
 
@@ -323,7 +322,6 @@ namespace MediaRtmpPusher
 				SDL_WaitThread(m_pStreamInfo->m_pAudioThr, NULL);
 				m_pStreamInfo->m_pAudioThr = NULL;
 			}
-
 
 			if (m_pStreamInfo->m_pVideoRefreshThr){
 				SDL_WaitThread(m_pStreamInfo->m_pVideoRefreshThr, NULL);
@@ -829,7 +827,7 @@ namespace MediaRtmpPusher
 		AVFrame	*pFrame;
 		pFrame = avcodec_alloc_frame();
 		AVFrame *picture = avcodec_alloc_frame();
-		//AVFrame *SDL_picture = avcodec_alloc_frame();
+		AVFrame *SDL_picture = avcodec_alloc_frame();
 
 		int size = avpicture_get_size(pThis->m_pCodecVideoCtx->pix_fmt, pThis->m_recordInfo.video_dst_width, pThis->m_recordInfo.video_dst_width);
 
@@ -1186,6 +1184,7 @@ namespace MediaRtmpPusher
 				av_free_packet(pPkt);
 				pPkt = NULL;
 			}
+			av_usleep(15000);
 		}
 		Write_Log(LOG_INFO, "write_frame_thr : push over.");
 		return iRet;

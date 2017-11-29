@@ -38,4 +38,4 @@
 
 
 #include "../publiclib/publicfun.h"
-#pragma comment(lib, "../Release/publiclib.lib")
+#pragma comment(lib, "../Debug/publiclib.lib")
